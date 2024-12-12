@@ -31,12 +31,12 @@ X = pd.get_dummies(X, columns=['region'], drop_first=True)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
 
 # train dt
-tree1 = DecisionTreeClassifier(max_depth=10, random_state=400)
+tree1 = DecisionTreeClassifier(max_depth=20, min_samples_split=10, min_samples_leaf=10, class_weight={0:1, 1:4}, random_state=400)
 tree1.fit(X_train, y_train)
 
 # check replacement of hugface with gpt
 def fetch_historical_context_gpt(country_name, year, features, sanction_status):
-    openai.api_key = "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"
+    openai.api_key = "add here"
 
     prompt = f"""
     Provide an explanation for the decision tree's prediction:
