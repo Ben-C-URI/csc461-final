@@ -36,7 +36,6 @@ tree1.fit(X_train, y_train)
 
 # check replacement of hugface with gpt
 def fetch_historical_context_gpt(country_name, year, features, sanction_status):
-    openai.api_key = "add here"
 
     prompt = f"""
     Provide an explanation for the decision tree's prediction:
